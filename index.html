@@ -594,167 +594,167 @@ var timeline = [];
       
 ////////////////////////////////////////////////////////////////////////////      
 // BEGINNING OF CHOICE LOOP    
-//      
-//   
-//// FIRST BLOCK
-//        for (j = 0; j < degrade_n; j++) {
-//            if(j < 26) {
-//                var char_half1 = {
-//                    type: 'html-button-response',
-//                    stimulus: ['<div id="wrapper"><div id="leftStim"><img src="img/'+left_char_Stim+'"></div>'+'<div id="rightStim"><img src="img/'+right_char_Stim+'"></div></div>'],
-//                    choices: ['<div id="wrapper"><div id="leftNumStyle">'+ (Math.round(first[leftNum][j] * 100) / 100).toFixed(2) + '</div></div>', '<div id="wrapper"><div id="rightNumStyle">'+(Math.round(first[rightNum][j] * 100) / 100).toFixed(2) + '</div></div>'],
-//                    margin_horizontal: '100px',
-//                    button_html: '<button class="choice-button">%choice%</button>',
-//                };
-//                timeline.push(char_half1);
-//                timeline.push(fixation);
-//            };
-//          
-//            if(j == catchIndex) {
-//                var catchTrial = {
-//                    type: 'html-button-response',
-//                    stimulus: ['<div id="wrapper"><div id="leftStim"><img src="img/'+youColor_pic+'"></div>'+'<div id="rightStim"><img src="img/'+youColor_pic+'"></div></div>'],
-//                    choices: ['<div id="wrapper"><div id="leftNumStyle">'+ "50.00" + '</div></div>', '<div id="wrapper"><div id="rightNumStyle">'+ "0.00" + '</div></div>'],
-//                    margin_horizontal: '100px',
-//                    button_html: '<button class="choice-button">%choice%</button>',
-//                    on_finish: function(data) {
-//                        data.catchIndex = catchIndex}
-//                    };
-//                    timeline.push(catchTrial);
-//                    timeline.push(fixation);
-//                };
-//
-//              if(j >= 26) {
-//                var char_half2 = {
-//                    type: 'html-button-response',
-//                    stimulus: ['<div id="wrapper"><div id="leftStim"><img src="img/'+left_char_Stim+'"></div>'+'<div id="rightStim"><img src="img/'+right_char_Stim+'"></div></div>'],
-//                    choices: ['<div id="wrapper"><div id="leftNumStyle">'+ (Math.round(second[leftNum][j] * 100) / 100).toFixed(2) + '</div></div>', '<div id="wrapper"><div id="rightNumStyle">'+(Math.round(second[rightNum][j] * 100) / 100).toFixed(2) + '</div></div>'],
-//                    margin_horizontal: '100px',
-//                    button_html: '<button class="choice-button">%choice%</button>',
-//                };
-//                timeline.push(char_half2);
-//                timeline.push(fixation);
-//            };};
-//      
-//      
-//  // MOTIVE PROBE 
-//      
-//                /* define instructions trial */
-//                var motInf_active_char = {
-//                    type: 'reconstruction',
-//                    stim_function: function_char,
-//                    starting_value: randStart_active_char
-//                };
-//                timeline.push(motInf_active_char);
-//
-//              if(j == 26) {
-//                var motInf_active_char_conf = {
-//                    type: 'html-slider-response',
-//                    min: 1,
-//                    max: 7,
-//                    start: 4,
-//                    step: 1,
-//                    stimulus: "<p>How <b>confident</b> are you that you <br>accurately reported what you want? <br> <div class='flex-container'><div>Not at all</div><div>Extremely</div></div>",
-//                    labels: [1,2,3,4,5,6,7],
-//                };
-//                  timeline.push(motInf_active_char_conf);}; 
-//        
-//      
-//// MOTIVE INDUCTION
-//        
-//            /* define instructions trial */
-//            var nextTask = {
-//              type: "instructions",
-//              pages: ['<div class="instructions"><p>You have completed the first block of choices. We now want to provide some additional information about the American Red Cross to help you make more informed choices in our task. <b>Please read this information carefully</b>. Advance to the next screen when you are ready.</p></div>'],
-//            show_clickable_nav: true
-//            };
-//                timeline.push(nextTask); 
-//    
-//            /* motive induction */
-//            var induction = {
-//              type: "instructions",
-//              pages: ['<div class="instructions"><p><strong>Please carefully read the following</strong></p><p>The American Red Cross recently urged individuals, as a fire safety precaution, to check all holiday light cords to ensure they aren’t frayed or broken and to not string too many strands of lights together - no more than three per extension cord.</p></div>',
-//
-//              '<div class="instructions"><p><strong>Please carefully read the following</strong></p><p>The American Red Cross was recently the focus of an investigative report published by NPR. Citing internal Red Cross sources and government officials, the report harshly criticized the organization for failing to meet the immediate needs of victims in Hurricanes Sandy and Isaac, and described "an organization so consumed with public relations that it hindered their ability to provide disaster services."</p></div>',
-//
-//              '<div class = "instructions"><p><strong>Please carefully read the following</strong></p><p>The American Red Cross is currently seeking “Blood Donor Ambassadors”, which welcome donors and help to enhance safety measures at blood drives. Volunteers are asked to commit to at least one drive per month and flexible schedules are available.</p>'],
-//            show_clickable_nav: true
-//            };
-//            timeline.push(induction); 
-//      
-//
-//             /* define instructions trial */
-//            var nextTask2 = {
-//              type: "instructions",
-//              pages: ['<p>Please press "Next" to proceed to the <b>second block</b> of choices when ready.</p>'],
-//            show_clickable_nav: true
-//            };
-//                timeline.push(nextTask2);        
-//        
-//// SECOND BLOCK
-//        for (j = 0; j < degrade_n; j++) {
-//
-//            if(j < 26) {
-//                var gc_half1 = {
-//                    type: 'html-button-response',
-//                    stimulus: ['<div id="wrapper"><div id="leftStim"><img src="img/'+left_char_Stim+'"></div>'+'<div id="rightStim"><img src="img/'+right_char_Stim+'"></div></div>'],
-//                    choices: ['<div id="wrapper"><div id="leftNumStyle">'+ (Math.round(first[leftNum][j] * 100) / 100).toFixed(2) + '</div></div>', '<div id="wrapper"><div id="rightNumStyle">'+(Math.round(first[rightNum][j] * 100) / 100).toFixed(2) + '</div></div>'],
-//                    margin_horizontal: '100px',
-//                    button_html: '<button class="choice-button">%choice%</button>',
-//                };
-//                timeline.push(gc_half1);
-//                timeline.push(fixation);};
-//           
-//                  
-//            if(j == catchIndex) {
-//                var catchTrial = {
-//                    type: 'html-button-response',
-//                    stimulus: ['<div id="wrapper"><div id="leftStim"><img src="img/'+youColor_pic+'"></div>'+'<div id="rightStim"><img src="img/'+youColor_pic+'"></div></div>'],
-//                    choices: ['<div id="wrapper"><div id="leftNumStyle">'+ "50.00" + '</div></div>', '<div id="wrapper"><div id="rightNumStyle">'+ "0.00" + '</div></div>'],
-//                    margin_horizontal: '100px',
-//                    button_html: '<button class="choice-button">%choice%</button>',
-//                    on_finish: function(data) {
-//                        data.catchIndex = catchIndex}
-//                    };
-//                    timeline.push(catchTrial);
-//                    timeline.push(fixation);
-//                };
-//
-//              if(j >= 26) {
-//                var gc_half2 = {
-//                    type: 'html-button-response',
-//                    stimulus: ['<div id="wrapper"><div id="leftStim"><img src="img/'+left_char_Stim+'"></div>'+'<div id="rightStim"><img src="img/'+right_char_Stim+'"></div></div>'],
-//                    choices: ['<div id="wrapper"><div id="leftNumStyle">'+ (Math.round(second[leftNum][j] * 100) / 100).toFixed(2) + '</div></div>', '<div id="wrapper"><div id="rightNumStyle">'+(Math.round(second[rightNum][j] * 100) / 100).toFixed(2) + '</div></div>'],
-//                    margin_horizontal: '100px',
-//                    button_html: '<button class="choice-button">%choice%</button>',
-//                };
-//                timeline.push(gc_half2);
-//                timeline.push(fixation);
-//            };}
-//
-//      
-//// MOTIVE PROBE 2
-//                /* define instructions trial */
-//                var motInf_active_gc = {
-//                    type: 'reconstruction',
-//                    stim_function: function_gc,
-//                    starting_value: randStart_active_gc
-//                }
-//                timeline.push(motInf_active_gc);
-//            
-//                var motInf_active_gc_conf = {
-//                    type: 'html-slider-response',
-//                    min: 1,
-//                    max: 7,
-//                    start: 4,
-//                    step: 1,
-//                    stimulus: "<p>How <b>confident</b> are you that you <br>accurately reported what you want? <br> <div class='flex-container'><div>Not at all</div><div>Extremely</div></div>",
-//                    labels: [1,2,3,4,5,6,7],
-//                };
-//                  timeline.push(motInf_active_gc_conf); 
-//      
- // END OF CHOICE LOOP       
- ////////////////////////////////////////////////////////////////////////////     
+      
+   
+// FIRST BLOCK
+        for (j = 0; j < degrade_n; j++) {
+            if(j < 26) {
+                var char_half1 = {
+                    type: 'html-button-response',
+                    stimulus: ['<div id="wrapper"><div id="leftStim"><img src="img/'+left_char_Stim+'"></div>'+'<div id="rightStim"><img src="img/'+right_char_Stim+'"></div></div>'],
+                    choices: ['<div id="wrapper"><div id="leftNumStyle">'+ (Math.round(first[leftNum][j] * 100) / 100).toFixed(2) + '</div></div>', '<div id="wrapper"><div id="rightNumStyle">'+(Math.round(first[rightNum][j] * 100) / 100).toFixed(2) + '</div></div>'],
+                    margin_horizontal: '100px',
+                    button_html: '<button class="choice-button">%choice%</button>',
+                };
+                timeline.push(char_half1);
+                timeline.push(fixation);
+            };
+          
+            if(j == catchIndex) {
+                var catchTrial = {
+                    type: 'html-button-response',
+                    stimulus: ['<div id="wrapper"><div id="leftStim"><img src="img/'+youColor_pic+'"></div>'+'<div id="rightStim"><img src="img/'+youColor_pic+'"></div></div>'],
+                    choices: ['<div id="wrapper"><div id="leftNumStyle">'+ "50.00" + '</div></div>', '<div id="wrapper"><div id="rightNumStyle">'+ "0.00" + '</div></div>'],
+                    margin_horizontal: '100px',
+                    button_html: '<button class="choice-button">%choice%</button>',
+                    on_finish: function(data) {
+                        data.catchIndex = catchIndex}
+                    };
+                    timeline.push(catchTrial);
+                    timeline.push(fixation);
+                };
+
+              if(j >= 26) {
+                var char_half2 = {
+                    type: 'html-button-response',
+                    stimulus: ['<div id="wrapper"><div id="leftStim"><img src="img/'+left_char_Stim+'"></div>'+'<div id="rightStim"><img src="img/'+right_char_Stim+'"></div></div>'],
+                    choices: ['<div id="wrapper"><div id="leftNumStyle">'+ (Math.round(second[leftNum][j] * 100) / 100).toFixed(2) + '</div></div>', '<div id="wrapper"><div id="rightNumStyle">'+(Math.round(second[rightNum][j] * 100) / 100).toFixed(2) + '</div></div>'],
+                    margin_horizontal: '100px',
+                    button_html: '<button class="choice-button">%choice%</button>',
+                };
+                timeline.push(char_half2);
+                timeline.push(fixation);
+            };};
+      
+      
+  // MOTIVE PROBE 
+      
+                /* define instructions trial */
+                var motInf_active_char = {
+                    type: 'reconstruction',
+                    stim_function: function_char,
+                    starting_value: randStart_active_char
+                };
+                timeline.push(motInf_active_char);
+
+              if(j == 26) {
+                var motInf_active_char_conf = {
+                    type: 'html-slider-response',
+                    min: 1,
+                    max: 7,
+                    start: 4,
+                    step: 1,
+                    stimulus: "<p>How <b>confident</b> are you that you <br>accurately reported what you want? <br> <div class='flex-container'><div>Not at all</div><div>Extremely</div></div>",
+                    labels: [1,2,3,4,5,6,7],
+                };
+                  timeline.push(motInf_active_char_conf);}; 
+        
+      
+// MOTIVE INDUCTION
+        
+            /* define instructions trial */
+            var nextTask = {
+              type: "instructions",
+              pages: ['<div class="instructions"><p>You have completed the first block of choices. We now want to provide some additional information about the American Red Cross to help you make more informed choices in our task. <b>Please read this information carefully</b>. Advance to the next screen when you are ready.</p></div>'],
+            show_clickable_nav: true
+            };
+                timeline.push(nextTask); 
+    
+            /* motive induction */
+            var induction = {
+              type: "instructions",
+              pages: ['<div class="instructions"><p><strong>Please carefully read the following</strong></p><p>The American Red Cross recently urged individuals, as a fire safety precaution, to check all holiday light cords to ensure they aren’t frayed or broken and to not string too many strands of lights together - no more than three per extension cord.</p></div>',
+
+              '<div class="instructions"><p><strong>Please carefully read the following</strong></p><p>The American Red Cross was recently the focus of an investigative report published by NPR. Citing internal Red Cross sources and government officials, the report harshly criticized the organization for failing to meet the immediate needs of victims in Hurricanes Sandy and Isaac, and described "an organization so consumed with public relations that it hindered their ability to provide disaster services."</p></div>',
+
+              '<div class = "instructions"><p><strong>Please carefully read the following</strong></p><p>The American Red Cross is currently seeking “Blood Donor Ambassadors”, which welcome donors and help to enhance safety measures at blood drives. Volunteers are asked to commit to at least one drive per month and flexible schedules are available.</p>'],
+            show_clickable_nav: true
+            };
+            timeline.push(induction); 
+      
+
+             /* define instructions trial */
+            var nextTask2 = {
+              type: "instructions",
+              pages: ['<p>Please press "Next" to proceed to the <b>second block</b> of choices when ready.</p>'],
+            show_clickable_nav: true
+            };
+                timeline.push(nextTask2);        
+        
+// SECOND BLOCK
+        for (j = 0; j < degrade_n; j++) {
+
+            if(j < 26) {
+                var gc_half1 = {
+                    type: 'html-button-response',
+                    stimulus: ['<div id="wrapper"><div id="leftStim"><img src="img/'+left_char_Stim+'"></div>'+'<div id="rightStim"><img src="img/'+right_char_Stim+'"></div></div>'],
+                    choices: ['<div id="wrapper"><div id="leftNumStyle">'+ (Math.round(first[leftNum][j] * 100) / 100).toFixed(2) + '</div></div>', '<div id="wrapper"><div id="rightNumStyle">'+(Math.round(first[rightNum][j] * 100) / 100).toFixed(2) + '</div></div>'],
+                    margin_horizontal: '100px',
+                    button_html: '<button class="choice-button">%choice%</button>',
+                };
+                timeline.push(gc_half1);
+                timeline.push(fixation);};
+           
+                  
+            if(j == catchIndex) {
+                var catchTrial = {
+                    type: 'html-button-response',
+                    stimulus: ['<div id="wrapper"><div id="leftStim"><img src="img/'+youColor_pic+'"></div>'+'<div id="rightStim"><img src="img/'+youColor_pic+'"></div></div>'],
+                    choices: ['<div id="wrapper"><div id="leftNumStyle">'+ "50.00" + '</div></div>', '<div id="wrapper"><div id="rightNumStyle">'+ "0.00" + '</div></div>'],
+                    margin_horizontal: '100px',
+                    button_html: '<button class="choice-button">%choice%</button>',
+                    on_finish: function(data) {
+                        data.catchIndex = catchIndex}
+                    };
+                    timeline.push(catchTrial);
+                    timeline.push(fixation);
+                };
+
+              if(j >= 26) {
+                var gc_half2 = {
+                    type: 'html-button-response',
+                    stimulus: ['<div id="wrapper"><div id="leftStim"><img src="img/'+left_char_Stim+'"></div>'+'<div id="rightStim"><img src="img/'+right_char_Stim+'"></div></div>'],
+                    choices: ['<div id="wrapper"><div id="leftNumStyle">'+ (Math.round(second[leftNum][j] * 100) / 100).toFixed(2) + '</div></div>', '<div id="wrapper"><div id="rightNumStyle">'+(Math.round(second[rightNum][j] * 100) / 100).toFixed(2) + '</div></div>'],
+                    margin_horizontal: '100px',
+                    button_html: '<button class="choice-button">%choice%</button>',
+                };
+                timeline.push(gc_half2);
+                timeline.push(fixation);
+            };}
+
+      
+// MOTIVE PROBE 2
+                /* define instructions trial */
+                var motInf_active_gc = {
+                    type: 'reconstruction',
+                    stim_function: function_gc,
+                    starting_value: randStart_active_gc
+                }
+                timeline.push(motInf_active_gc);
+            
+                var motInf_active_gc_conf = {
+                    type: 'html-slider-response',
+                    min: 1,
+                    max: 7,
+                    start: 4,
+                    step: 1,
+                    stimulus: "<p>How <b>confident</b> are you that you <br>accurately reported what you want? <br> <div class='flex-container'><div>Not at all</div><div>Extremely</div></div>",
+                    labels: [1,2,3,4,5,6,7],
+                };
+                  timeline.push(motInf_active_gc_conf); 
+      
+// END OF CHOICE LOOP       
+////////////////////////////////////////////////////////////////////////////     
       
       
       
