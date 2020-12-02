@@ -42,8 +42,6 @@
         </script>
       
       
-      
-      
         <!-- jsPSYCH -->
         <script src="jspsych-6.1.0/jspsych.js"></script>
         <script src="jspsych-6.1.0/plugins/jspsych-html-keyboard-response.js"></script>
@@ -171,25 +169,25 @@ var timeline = [];
       
       
 ////Function to check whether consent has been given
-//var check_consent = function(elem) {
-//        if (document.getElementById('consent_checkbox').checked) {
-//            return true;
-//        }
-//        else {
-//            alert("If you wish to participate, you must check the box next to the statement 'I agree to participate in this study.'");
-//            return false;
-//        }
-//        return false;
-//    };
-//
-////Presents external consent page to participants
-//    var consent = {
-//            type:'external-html',
-//            url: "consent.html",
-//            cont_btn: "start",
-//            check_fn: check_consent
-//        };
-//        timeline.push(consent);
+var check_consent = function(elem) {
+        if (document.getElementById('consent_checkbox').checked) {
+            return true;
+        }
+        else {
+            alert("If you wish to participate, you must check the box next to the statement 'I agree to participate in this study.'");
+            return false;
+        }
+        return false;
+    };
+
+//Presents external consent page to participants
+    var consent = {
+            type:'external-html',
+            url: "consent.html",
+            cont_btn: "start",
+            check_fn: check_consent
+        };
+        timeline.push(consent);
       
       
       
@@ -482,7 +480,7 @@ var timeline = [];
     var function_char = function(param){
         var size = 50 + Math.floor(param*250); /* min 50/350, max 300/350 */
         var html = 
-            '<p style="font-family:arial;">Think about the first block.</p>'+
+            '<p style="font-family:arial;">Think about the choice block you just completed.</p>'+
            '<p style="font-family:arial;">How much did you want to earn money for <br><b><font color="'+left_char_Color+'">'+left_char+'</font></b> vs. money for <b><font color="'+right_char_Color+'">'+right_char+'</font></b>?</p>'+
             
             '<p class = "small" style="font-family:arial;margin-top: 25px;margin-bottom:5px"><font size="2"></p>'+
@@ -528,17 +526,8 @@ var timeline = [];
         'width: '+size+'px; height: '+30+'px;"></div></div></div>'
         return html;
     }
- 
-    
-    var think_pro = {
-      type: "instructions",
-      pages: ['<p>Press next to begin the first block of choices.</p>'],
-    show_clickable_nav: true
-    };
-    timeline.push(think_pro);  
       
-      
-      
+          
       
             
 ////////////////////////
@@ -673,11 +662,11 @@ var timeline = [];
             /* motive induction */
             var induction = {
               type: "instructions",
-              pages: ['<div class="instructions"><p><strong>Please carefully read the following</strong></p><p>The American Red Cross recently urged individuals, as a fire safety precaution, to check all holiday light cords to ensure they aren’t frayed or broken and to not string too many strands of lights together - no more than three per extension cord.</p></div>',
+              pages: ['<div class="instructions"><p><strong>Please carefully read the following</strong></p><p>On Twitter, The American Red Cross recently urged individuals, as a fire safety precaution, to check all holiday light cords to ensure they aren’t frayed or broken and to not string too many strands of lights together.</p></div>',
 
-              '<div class="instructions"><p><strong>Please carefully read the following</strong></p><p>The American Red Cross was recently the focus of an investigative report published by NPR. Citing internal Red Cross sources and government officials, the report harshly criticized the organization for failing to meet the immediate needs of victims in Hurricanes Sandy and Isaac, and described "an organization so consumed with public relations that it hindered their ability to provide disaster services."</p></div>',
+              '<div class="instructions"><p><strong>Please carefully read the following</strong></p><p>The American Red Cross was recently the focus of an investigative report published by NPR. Citing internal sources and government officials, the report harshly criticized the Red Cross for failing to meet the immediate needs of victims in Hurricanes Sandy and Isaac, and described "an organization so consumed with public relations that it hindered their ability to provide disaster services."</p></div>',
 
-              '<div class = "instructions"><p><strong>Please carefully read the following</strong></p><p>The American Red Cross is currently seeking “Blood Donor Ambassadors”, which welcome donors and help to enhance safety measures at blood drives. Volunteers are asked to commit to at least one drive per month and flexible schedules are available.</p>'],
+              '<div class = "instructions"><p><strong>Please carefully read the following</strong></p><p>The American Red Cross recently shared that they are seeking “Blood Donor Ambassadors”, which welcome donors and help to enhance safety measures at blood drives.</p>'],
             show_clickable_nav: true
             };
             timeline.push(induction); 
@@ -859,7 +848,7 @@ var timeline = [];
         max: 5,
         start: 3,
         step: 1,
-        stimulus: "<div class='longQ'><p>In today's study, you made choices involving various incentives including money for yourself or charity, and two gift cards for yourself. You were informed that for a subset of participants in this study, one of these choices really counts. <br><br><b>Did we communicate the fact that you could earn real money, gift cards, or money for charity, clearly and transparently enough in our instructions?</b><br><br>Please answer this question honestly and openly. This will help us to discover imperfections in our instructions.</p></div>",
+        stimulus: "<div class='longQ'><p>In today's study, you made choices involving various incentives including money for yourself or charity, and two gift cards for yourself. You were informed that for a subset of participants in this study, one of these choices really counts. <br><br><b>Did we communicate the fact that you could earn real money, or money for charity, clearly and transparently enough in our instructions?</b><br><br>Please answer this question honestly and openly. This will help us to discover imperfections in our instructions.</p></div>",
         labels: ["1<br> <font size='-2'>No, not at all</font>",2,3,4,"5 <br><font size='-2'>Yes, fully</font>"],
         slider_width: 400,
         prompt: ""
